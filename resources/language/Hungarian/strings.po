@@ -166,8 +166,8 @@ msgid "Server Discovery (GDM)"
 msgstr "Szerver felderítés"
 
 msgctxt "#32043"
-msgid "Start Plex On Kodi Startup"
-msgstr "Indítsa el a Plexet a Kodi indításakor"
+msgid "Start Plex On MrMC Startup"
+msgstr "Indítsa el a Plexet a MrMC indításakor"
 
 msgctxt "#32044"
 msgid "Connection 1 IP"
@@ -214,8 +214,8 @@ msgid "Addon Version"
 msgstr "Addon verzió"
 
 msgctxt "#32055"
-msgid "Kodi Version"
-msgstr "Kodi verzió"
+msgid "MrMC Version"
+msgstr "MrMC verzió"
 
 msgctxt "#32056"
 msgid "Screen Resolution"
@@ -688,12 +688,12 @@ msgid "Quality"
 msgstr "Minőség"
 
 msgctxt "#32398"
-msgid "Kodi Video Settings"
-msgstr "Kodi videó beállitások"
+msgid "MrMC Video Settings"
+msgstr "MrMC videó beállitások"
 
 msgctxt "#32399"
-msgid "Kodi Audio Settings"
-msgstr "Kodi audió beállitások"
+msgid "MrMC Audio Settings"
+msgstr "MrMC audió beállitások"
 
 msgctxt "#32400"
 msgid "Go To Season"
