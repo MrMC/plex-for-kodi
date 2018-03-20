@@ -88,7 +88,7 @@
                     <onup>SetProperty(OSD,)</onup>
                     <ondown>250</ondown>
                     <onup>SetProperty(OSD,)</onup>
-                    <itemgap>-40</itemgap>
+                    <itemgap>0</itemgap>
                     <orientation>horizontal</orientation>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <usecontrolcoords>true</usecontrolcoords>

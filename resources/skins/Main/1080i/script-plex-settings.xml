@@ -122,13 +122,13 @@
                     <focusedlayout height="75">
                         <control type="group">
                             <visible>ControlGroup(50).HasFocus(0)</visible>
-                            <control type="image">
+<!--                             <control type="image">
                                 <posx>0</posx>
                                 <posy>0</posy>
                                 <width>590</width>
                                 <height>155</height>
                                 <texture border="42">script.plex/drop-shadow.png</texture>
-                            </control>
+                            </control> -->
                             <control type="image">
                                 <visible>Control.HasFocus(75)</visible>
                                 <posx>40</posx>
@@ -255,13 +255,13 @@
                     <focusedlayout height="75">
                         <control type="group">
                             <visible>Control.HasFocus(100) | Control.HasFocus(125)</visible>
-                            <control type="image">
+<!--                             <control type="image">
                                 <posx>0</posx>
                                 <posy>0</posy>
                                 <width>776</width>
                                 <height>155</height>
                                 <texture border="42">script.plex/drop-shadow.png</texture>
-                            </control>
+                            </control> -->
                             <control type="image">
                                 <visible>!Control.HasFocus(125)</visible>
                                 <posx>40</posx>
@@ -457,13 +457,13 @@
                         </control>
                     </itemlayout>
                     <focusedlayout height="75">
-                        <control type="image">
+<!--                         <control type="image">
                             <posx>0</posx>
                             <posy>0</posy>
                             <width>610</width>
                             <height>155</height>
                             <texture border="42">script.plex/drop-shadow.png</texture>
-                        </control>
+                        </control> -->
                         <control type="image">
                             <posx>40</posx>
                             <posy>40</posy>

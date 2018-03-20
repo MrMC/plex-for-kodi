@@ -75,7 +75,7 @@
                 <height>145</height>
                 <onup>200</onup>
                 <onright>101</onright>
-                <itemgap>-50</itemgap>
+                <itemgap>0</itemgap>
                 <orientation>horizontal</orientation>
                 <align>center</align>
                 <scrolltime tween="quadratic" easing="out">200</scrolltime>

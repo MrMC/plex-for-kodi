@@ -10,13 +10,13 @@
         <control type="group">
             <posx>660</posx>
             <posy>145</posy>
-            <control type="image">
+<!--             <control type="image">
                 <posx>-40</posx>
                 <posy>-40</posy>
                 <width>680</width>
                 <height>870</height>
                 <texture border="42">script.plex/drop-shadow.png</texture>
-            </control>
+            </control> -->
             <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>

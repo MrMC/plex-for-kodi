@@ -342,7 +342,7 @@
                 <onup>200</onup>
                 <ondown>101</ondown>
                 <onright>101</onright>
-                <itemgap>-20</itemgap>
+                <itemgap>0</itemgap>
                 <orientation>horizontal</orientation>
                 <scrolltime tween="quadratic" easing="out">200</scrolltime>
                 <usecontrolcoords>true</usecontrolcoords>

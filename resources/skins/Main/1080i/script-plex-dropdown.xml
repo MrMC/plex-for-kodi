@@ -22,13 +22,13 @@
             <visible>!IsEmpty(Window.Property(show))</visible>
             <posx>0</posx>
             <posy>0</posy>
-            <control type="image" id="110">
+<!--             <control type="image" id="110">
                 <posx>-40</posx>
                 <posy>-40</posy>
                 <width>380</width>
                 <height>146</height>
                 <texture border="42">script.plex/drop-shadow.png</texture>
-            </control>
+            </control> -->
             <control type="list" id="250">
                 <posx>0</posx>
                 <posy>0</posy>
