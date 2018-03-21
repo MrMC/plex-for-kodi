@@ -2060,14 +2060,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2100)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -2192,14 +2192,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2101)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -2323,14 +2323,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2102)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -2609,14 +2609,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2104)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -2748,14 +2748,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2105)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -2887,14 +2887,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2106)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -3181,14 +3181,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2108)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -3320,14 +3320,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2109)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -3459,14 +3459,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2110)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -3753,14 +3753,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2112)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -3892,14 +3892,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2113)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -4031,14 +4031,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2114)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -4325,14 +4325,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2116)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -4464,14 +4464,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2117)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -4603,14 +4603,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2118)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -4897,14 +4897,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2120)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -5036,14 +5036,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2121)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -5175,14 +5175,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2122)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -5469,14 +5469,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2124)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -5608,14 +5608,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2125)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -5747,14 +5747,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2126)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -6041,14 +6041,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-  <!--                               <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2128)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -6180,14 +6180,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2129)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -6319,14 +6319,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2130)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -6613,14 +6613,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2132)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -6752,14 +6752,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2133)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -6891,14 +6891,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2134)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -7185,14 +7185,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2136)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -7324,14 +7324,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2137)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -7463,14 +7463,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2138)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -7757,14 +7757,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2140)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -7896,14 +7896,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2141)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -8035,14 +8035,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2142)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -8329,14 +8329,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="95,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2144)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>270</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -8468,14 +8468,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2145)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>360</width>
                                     <height>360</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>
@@ -8607,14 +8607,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="155,89.5" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(2146)</visible>
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>390</width>
                                     <height>259</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>

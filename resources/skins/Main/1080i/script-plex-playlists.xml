@@ -117,14 +117,14 @@
                                 <animation effect="zoom" start="116" end="100" time="100" center="140,140" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(101)</visible>
                                     <posx>-19</posx>
                                     <posy>-19</posy>
                                     <width>318</width>
                                     <height>318</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>21</posx>
                                     <posy>21</posy>
@@ -274,14 +274,14 @@
                                 <animation effect="zoom" start="110" end="100" time="100" center="310,177" reversible="false">UnFocus</animation>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <visible>Control.HasFocus(301)</visible>
                                     <posx>1.5</posx>
                                     <posy>-15.5</posy>
                                     <width>617</width>
                                     <height>383</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>41.5</posx>
                                     <posy>25.5</posy>

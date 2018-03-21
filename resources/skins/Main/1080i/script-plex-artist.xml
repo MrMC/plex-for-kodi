@@ -40,7 +40,7 @@
                 <height>145</height>
                 <onup>200</onup>
                 <ondown>101</ondown>
-                <itemgap>0</itemgap>
+                <itemgap>-50</itemgap>
                 <orientation>horizontal</orientation>
                 <align>center</align>
                 <scrolltime tween="quadratic" easing="out">200</scrolltime>
@@ -219,13 +219,13 @@
                                 <visible>Control.HasFocus(101)</visible>
                                 <posx>0</posx>
                                 <posy>0</posy>
-<!--                                 <control type="image">
+                                <control type="image">
                                     <posx>-40</posx>
                                     <posy>-40</posy>
                                     <width>330</width>
                                     <height>330</height>
                                     <texture border="42">script.plex/drop-shadow.png</texture>
-                                </control> -->
+                                </control>
                                 <control type="group">
                                     <posx>5</posx>
                                     <posy>5</posy>

@@ -43,7 +43,7 @@
                 <height>145</height>
                 <onup>200</onup>
                 <ondown>101</ondown>
-                <itemgap>0</itemgap>
+                <itemgap>-20</itemgap>
                 <orientation>horizontal</orientation>
                 <scrolltime tween="quadratic" easing="out">200</scrolltime>
                 <usecontrolcoords>true</usecontrolcoords>
@@ -182,7 +182,7 @@
                                 <posy>0</posy>
                                 <control type="group">
                                     <visible>Control.HasFocus(101)</visible>
-<!--                                     <control type="image">
+                                    <control type="image">
                                         <visible>IsEmpty(ListItem.Property(is.folder))</visible>
                                         <posx>-40</posx>
                                         <posy>-40</posy>
@@ -197,7 +197,7 @@
                                         <width>334</width>
                                         <height>374</height>
                                         <texture border="42">script.plex/drop-shadow.png</texture>
-                                    </control> -->
+                                    </control>
                                 </control>
                                 <control type="group">
                                     <posx>5</posx>
