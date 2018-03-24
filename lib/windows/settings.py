@@ -232,6 +232,89 @@ class Settings(object):
                 BoolSetting('gdm_discovery', T(32042, 'Server Discovery (GDM)'), True),
                 BoolSetting('kiosk.mode', T(32043, 'Start Plex On Kodi Startup'), False),
                 BoolSetting('debug', T(32024, 'Debug Logging'), False),
+            )
+        ),
+        'manual': (
+            T(32050, 'Manual Servers'), (
+                IPSetting('manual_ip_0', T(32044, 'Connection 1 IP'), ''),
+                IntegerSetting('manual_port_0', T(32045, 'Connection 1 Port'), 32400),
+                IPSetting('manual_ip_1', T(32046, 'Connection 2 IP'), ''),
+                IntegerSetting('manual_port_1', T(32047, 'Connection 2 Port'), 32400)
+            )
+        ),
+        'privacy': (
+            T(32051, 'Privacy'),
+            ()
+        ),
+        'about': (
+            T(32052, 'About'), (
+                InfoSetting('addon_version', T(32054, 'Addon Version'), util.ADDON.getAddonInfo('version')),
+                InfoSetting('kodi_version', T(32055, 'Kodi Version'), xbmc.getInfoLabel('System.BuildVersion')),
+                PlatformSetting(),
+                InfoSetting('screen_res', T(32056, 'Screen Resolution'), xbmc.getInfoLabel('System.ScreenResolution').split('-')[0].strip()),
+                ServerVersionSetting('server_version', T(32057, 'Current Server Version'), None)
+            )
+        ),
+    }
+
+    SETTINGS_TVOS = {
+        'main': (
+            T(32000, 'Main'), (
+                BoolSetting(
+                    'auto_signin', T(32038, 'Automatically Sign In'), False
+                ).description(
+                    T(32100, 'Skip user selection and pin entry on startup.')
+                ),
+                BoolSetting(
+                    'post_play_auto', T(32039, 'Post Play Auto Play'), True
+                ).description(
+                    T(
+                        32101,
+                        "If enabled, when playback ends and there is a 'Next Up' item available, it will be automatically be played after a 15 second delay."
+                    )
+                ),
+            )
+        ),
+        'audio': (
+            T(32048, 'Audio'),
+            ()
+        ),
+        'video': (
+            T(32053, 'Video'), (
+                QualitySetting('local_quality', T(32020, 'Local Quality'), 13),
+                QualitySetting('remote_quality', T(32021, 'Remote Quality'), 8),
+                QualitySetting('online_quality', T(32022, 'Online Quality'), 13),
+                BoolSetting('playback_directplay', T(32025, 'Allow Direct Play'), True),
+                BoolSetting('playback_remux', T(32026, 'Allow Direct Stream'), True),
+                BoolSetting('allow_4k', T(32036, 'Allow 4K'), True).description(
+                    T(32102, 'Enable this if your hardware can handle 4K playback. Disable it to force transcoding.')
+                ),
+                BoolSetting('allow_hevc', T(32037, 'Allow HEVC (h265)'), False).description(
+                    T(32103, 'Enable this if your hardware can handle HEVC/h265. Disable it to force transcoding.')
+                )
+            )
+        ),
+        'subtitles': (
+            T(32396, 'Subtitles'), (
+                OptionsSetting(
+                    'burn_subtitles',
+                    T(32031, 'Burn Subtitles (Direct Play Only)'),
+                    'auto',
+                    (('auto', T(32030, 'Auto')), ('image', T(32029, 'Only Image Formats')), ('always', T(32028, 'Always')))
+                ),
+                BoolSetting('subtitle_downloads', T(32040, 'Enable Subtitle Downloading'), False)
+            )
+        ),
+        'advanced': (
+            T(32049, 'Advanced'), (
+                OptionsSetting(
+                    'allow_insecure', T(32032), 'never', (('never', T(32033)), ('same_network', T(32034)), ('always', T(32035)))
+                ).description(
+                    T(32104, 'When to connect to servers with no secure connections...')
+                ),
+                BoolSetting('gdm_discovery', T(32042, 'Server Discovery (GDM)'), True),
+                BoolSetting('kiosk.mode', T(32043, 'Start Plex On Kodi Startup'), False),
+                BoolSetting('debug', T(32024, 'Debug Logging'), False),
                 BoolSetting('allow_exit', T(32058, 'Allow Plex addon to exit to MrMC'), True),
             )
         ),
@@ -261,8 +344,10 @@ class Settings(object):
     SECTION_IDS = ('main', 'video', 'subtitles', 'advanced', 'manual', 'about')
 
     def __getitem__(self, key):
-        return self.SETTINGS[key]
-
+        if xbmc.getCondVisibility("System.Platform.TVOS"):
+          return self.SETTINGS_TVOS[key]
+        else:  
+          return self.SETTINGS[key]
 
 class SettingsWindow(kodigui.BaseWindow, windowutils.UtilMixin):
     xmlFile = 'script-plex-settings.xml'
