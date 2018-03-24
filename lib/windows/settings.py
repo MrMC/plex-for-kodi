@@ -232,6 +232,7 @@ class Settings(object):
                 BoolSetting('gdm_discovery', T(32042, 'Server Discovery (GDM)'), True),
                 BoolSetting('kiosk.mode', T(32043, 'Start Plex On Kodi Startup'), False),
                 BoolSetting('debug', T(32024, 'Debug Logging'), False),
+                BoolSetting('allow_exit', T(32058, 'Allow Plex addon to exit to MrMC'), True),
             )
         ),
         'manual': (
