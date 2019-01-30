@@ -8,23 +8,15 @@
     </coordinates>
     <backgroundcolor>0xff111111</backgroundcolor>
     <controls>
-        <control type="group">
+        <control type="image">
             <visible>!IsEmpty(Window(10000).Property(script.plex.background.splash))</visible>
-            <control type="image">
-                <posx>710</posx>
-                <posy>459</posy>
-                <width>500</width>
-                <height>162</height>
-                <texture>script.plex/splash.png</texture>
-            </control>
-            <control type="image">
-                <bottom>50</bottom>
-                <right>50</right>
-                <width>600</width>
-                <height>177</height>
-                <texture>script.plex/poweredby.png</texture>
-            </control>
+            <posx>710</posx>
+            <posy>459</posy>
+            <width>500</width>
+            <height>162</height>
+            <texture>script.plex/splash.png</texture>
         </control>
+
         <control type="group">
             <visible>!IsEmpty(Window(10000).Property(script.plex.background.busy))</visible>
             <control type="image">
