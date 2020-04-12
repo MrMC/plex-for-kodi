@@ -358,7 +358,7 @@
                     <height>1610</height>
 
                     <onup>300</onup>
-                    <itemgap>0</itemgap>
+                    <itemgap>10</itemgap>
 
                     <control type="group" id="500">
                         <visible>IntegerGreaterThan(Container(400).NumItems,0) + IsEmpty(Window.Property(drawing))</visible>

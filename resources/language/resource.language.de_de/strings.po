@@ -167,8 +167,8 @@ msgid "Server Discovery (GDM)"
 msgstr "Server Erkennung (GDM)"
 
 msgctxt "#32043"
-msgid "Start Plex On Kodi Startup"
-msgstr "Plex mit Kodi starten"
+msgid "Start Plex On MrMC Startup"
+msgstr "Plex mit MrMC starten"
 
 msgctxt "#32044"
 msgid "Connection 1 IP"
@@ -215,8 +215,8 @@ msgid "Addon Version"
 msgstr "Erweiterung Version"
 
 msgctxt "#32055"
-msgid "Kodi Version"
-msgstr "Kodi Version"
+msgid "MrMC Version"
+msgstr "MrMC Version"
 
 msgctxt "#32056"
 msgid "Screen Resolution"
@@ -687,12 +687,12 @@ msgid "Quality"
 msgstr "Qualität"
 
 msgctxt "#32398"
-msgid "Kodi Video Settings"
-msgstr "Kodi Bild Einstellungen"
+msgid "MrMC Video Settings"
+msgstr "MrMC Bild Einstellungen"
 
 msgctxt "#32399"
-msgid "Kodi Audio Settings"
-msgstr "Kodi Ton Einstellungen"
+msgid "MrMC Audio Settings"
+msgstr "MrMC Ton Einstellungen"
 
 msgctxt "#32400"
 msgid "Go To Season"

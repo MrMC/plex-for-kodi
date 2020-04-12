@@ -493,6 +493,9 @@ class HomeWindow(kodigui.BaseWindow, util.CronReceiver):
                     elif self.getFocusId() == self.SERVER_LIST_ID:
                         self.setFocusId(self.SERVER_BUTTON_ID)
                         return
+                    if util.getSetting('allow_exit', False):
+                        if not self.confirmExit():
+                            return
 
                     if util.advancedSettings.fastBack and not optionsFocused and offSections \
                             and self.lastFocusID not in (self.USER_BUTTON_ID, self.SERVER_BUTTON_ID,

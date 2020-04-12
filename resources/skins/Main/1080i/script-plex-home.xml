@@ -7940,7 +7940,7 @@
                     <ondown>50</ondown>
                     <onleft>204</onleft>
                     <align>right</align>
-                    <itemgap>0</itemgap>
+                    <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <usecontrolcoords>true</usecontrolcoords>
