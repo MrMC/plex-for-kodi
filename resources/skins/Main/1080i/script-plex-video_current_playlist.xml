@@ -10,7 +10,7 @@
     <controls>
         <control type="group">
             <control type="group" id="100">
-                <!-- <visible>Integer.IsGreater(Container(101).NumItems,0) + String.IsEmpty(Window.Property(drawing))</visible> -->
+                <!-- <visible>IntegerGreaterThan(Container(101).NumItems,0) + IsEmpty(Window.Property(drawing))</visible> -->
                 <defaultcontrol>101</defaultcontrol>
                 <posx>750</posx>
                 <posy>140</posy>
@@ -42,7 +42,7 @@
                             <posx>120</posx>
                             <posy>24</posy>
                             <control type="label">
-                                <visible>String.IsEmpty(ListItem.Property(playing))</visible>
+                                <visible>IsEmpty(ListItem.Property(playing))</visible>
                                 <posx>-10</posx>
                                 <posy>0</posy>
                                 <width>60</width>
@@ -54,7 +54,7 @@
                                 <label>[B]$INFO[ListItem.Property(track.number)][/B]</label>
                             </control>
                             <control type="image">
-                                <visible>!String.IsEmpty(ListItem.Property(playing))</visible>
+                                <visible>!IsEmpty(ListItem.Property(playing))</visible>
                                 <posx>2</posx>
                                 <posy>32.5</posy>
                                 <width>35</width>
@@ -63,7 +63,7 @@
                                 <colordiffuse>FFE5A00D</colordiffuse>
                             </control>
                             <control type="group">
-                                <visible>String.IsEmpty(ListItem.Property(video))</visible>
+                                <visible>IsEmpty(ListItem.Property(video))</visible>
                                 <control type="image">
                                     <posx>63</posx>
                                     <posy>11</posy>
@@ -100,7 +100,7 @@
                                 </control>
                             </control>
                             <control type="group">
-                                <visible>!String.IsEmpty(ListItem.Property(video))</visible>
+                                <visible>!IsEmpty(ListItem.Property(video))</visible>
                                 <control type="image">
                                     <posx>63</posx>
                                     <posy>11</posy>
@@ -110,7 +110,7 @@
                                     <aspectratio>scale</aspectratio>
                                 </control>
                                 <control type="image">
-                                    <visible>String.IsEmpty(ListItem.Property(watched))</visible>
+                                    <visible>IsEmpty(ListItem.Property(watched))</visible>
                                     <posx>895</posx>
                                     <posy>-1</posy>
                                     <width>35</width>
@@ -156,7 +156,7 @@
                                 <label>[B]$INFO[ListItem.Property(track.duration)][/B]</label>
                             </control>
                             <control type="image">
-                                <visible>String.IsEmpty(ListItem.Property(is.footer))</visible>
+                                <visible>IsEmpty(ListItem.Property(is.footer))</visible>
                                 <posx>0</posx>
                                 <posy>98</posy>
                                 <width>930</width>
@@ -175,7 +175,7 @@
                                 <posx>120</posx>
                                 <posy>24</posy>
                                 <control type="label">
-                                    <visible>String.IsEmpty(ListItem.Property(playing))</visible>
+                                    <visible>IsEmpty(ListItem.Property(playing))</visible>
                                     <posx>-10</posx>
                                     <posy>0</posy>
                                     <width>60</width>
@@ -187,7 +187,7 @@
                                     <label>[B]$INFO[ListItem.Property(track.number)][/B]</label>
                                 </control>
                                 <control type="image">
-                                    <visible>!String.IsEmpty(ListItem.Property(playing))</visible>
+                                    <visible>!IsEmpty(ListItem.Property(playing))</visible>
                                     <posx>0</posx>
                                     <posy>32.5</posy>
                                     <width>35</width>
@@ -196,7 +196,7 @@
                                     <colordiffuse>FFE5A00D</colordiffuse>
                                 </control>
                                 <control type="group">
-                                    <visible>String.IsEmpty(ListItem.Property(video))</visible>
+                                    <visible>IsEmpty(ListItem.Property(video))</visible>
                                     <control type="image">
                                         <posx>63</posx>
                                         <posy>11</posy>
@@ -233,7 +233,7 @@
                                     </control>
                                 </control>
                                 <control type="group">
-                                    <visible>!String.IsEmpty(ListItem.Property(video))</visible>
+                                    <visible>!IsEmpty(ListItem.Property(video))</visible>
                                     <control type="image">
                                         <posx>63</posx>
                                         <posy>11</posy>
@@ -243,7 +243,7 @@
                                         <aspectratio>scale</aspectratio>
                                     </control>
                                     <control type="image">
-                                        <visible>String.IsEmpty(ListItem.Property(watched))</visible>
+                                        <visible>IsEmpty(ListItem.Property(watched))</visible>
                                         <posx>895</posx>
                                         <posy>-1</posy>
                                         <width>35</width>
@@ -289,7 +289,7 @@
                                     <label>[B]$INFO[ListItem.Property(track.duration)][/B]</label>
                                 </control>
                                 <control type="image">
-                                    <visible>String.IsEmpty(ListItem.Property(is.footer))</visible>
+                                    <visible>IsEmpty(ListItem.Property(is.footer))</visible>
                                     <posx>0</posx>
                                     <posy>97</posy>
                                     <width>930</width>
@@ -336,7 +336,7 @@
                                     <colordiffuse>99FFFFFF</colordiffuse>
                                 </control>-->
                                 <control type="label">
-                                    <visible>String.IsEmpty(ListItem.Property(playing))</visible>
+                                    <visible>IsEmpty(ListItem.Property(playing))</visible>
                                     <posx>24</posx>
                                     <posy>0</posy>
                                     <width>60</width>
@@ -348,7 +348,7 @@
                                     <label>[B]$INFO[ListItem.Property(track.number)][/B]</label>
                                 </control>
                                 <control type="image">
-                                    <visible>!String.IsEmpty(ListItem.Property(playing))</visible>
+                                    <visible>!IsEmpty(ListItem.Property(playing))</visible>
                                     <posx>36</posx>
                                     <posy>32.5</posy>
                                     <width>35</width>
@@ -357,9 +357,9 @@
                                     <colordiffuse>FF000000</colordiffuse>
                                 </control>
                                 <control type="group">
-                                    <visible>String.IsEmpty(ListItem.Property(video))</visible>
+                                    <visible>IsEmpty(ListItem.Property(video))</visible>
                                     <control type="image">
-                                        <visible>String.IsEmpty(ListItem.Property(video))</visible>
+                                        <visible>IsEmpty(ListItem.Property(video))</visible>
                                         <posx>103</posx>
                                         <posy>0</posy>
                                         <width>100</width>
@@ -395,7 +395,7 @@
                                     </control>
                                 </control>
                                 <control type="group">
-                                    <visible>!String.IsEmpty(ListItem.Property(video))</visible>
+                                    <visible>!IsEmpty(ListItem.Property(video))</visible>
                                     <control type="image">
                                         <posx>103</posx>
                                         <posy>0</posy>
@@ -405,7 +405,7 @@
                                         <aspectratio>scale</aspectratio>
                                     </control>
                                     <control type="image">
-                                        <visible>String.IsEmpty(ListItem.Property(watched))</visible>
+                                        <visible>IsEmpty(ListItem.Property(watched))</visible>
                                         <posx>951</posx>
                                         <posy>0</posy>
                                         <width>48</width>
