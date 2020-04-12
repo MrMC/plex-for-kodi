@@ -1,12 +1,11 @@
-from __future__ import absolute_import
-from kodi_six import xbmc
-from kodi_six import xbmcgui
-from . import kodigui
+import xbmc
+import xbmcgui
+import kodigui
 
-from . import busy
-from . import windowutils
-from . import dropdown
-from . import opener
+import busy
+import windowutils
+import dropdown
+import opener
 
 from lib import util
 from lib import player

@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import sys
 import platform
 import uuid
@@ -6,16 +5,14 @@ import json
 import threading
 import time
 import requests
-import six
 
-from kodi_six import xbmc
+import xbmc
 
-from plexnet import plexapp, myplex, util as plexnet_util
-from . import util
-from six.moves import range
+from plexnet import plexapp, myplex
+import util
 
 
-class PlexTimer(plexapp.util.Timer):
+class PlexTimer(plexapp.Timer):
     def shouldAbort(self):
         return xbmc.abortRequested
 
@@ -24,7 +21,7 @@ def abortFlag():
     return util.MONITOR.abortRequested()
 
 
-plexapp.util.setTimer(PlexTimer)
+plexapp.setTimer(PlexTimer)
 plexapp.setAbortFlagFunction(abortFlag)
 
 maxVideoRes = plexapp.Res((3840, 2160))  # INTERFACE.globals["supports4k"] and plexapp.Res((3840, 2160)) or plexapp.Res((1920, 1080))
@@ -221,13 +218,13 @@ class PlexInterface(plexapp.AppInterface):
             return 360
 
 
-plexapp.util.setInterface(PlexInterface())
+plexapp.setInterface(PlexInterface())
 plexapp.setUserAgent(defaultUserAgent())
 
 
-class CallbackEvent(plexapp.util.CompatEvent):
+class CallbackEvent(plexapp.CompatEvent):
     def __init__(self, context, signal, timeout=15, *args, **kwargs):
-        plexnet_util.Event.__init__(self, *args, **kwargs)
+        threading._Event.__init__(self, *args, **kwargs)
         self.start = time.time()
         self.context = context
         self.signal = signal
@@ -244,10 +241,10 @@ class CallbackEvent(plexapp.util.CompatEvent):
         return '<{0}:{1}>'.format(self.__class__.__name__, self.signal)
 
     def set(self, **kwargs):
-        plexnet_util.Event.set(self)
+        threading._Event.set(self)
 
     def wait(self):
-        if not plexnet_util.Event.wait(self, self.timeout):
+        if not threading._Event.wait(self, self.timeout):
             util.DEBUG_LOG('{0}: TIMED-OUT'.format(self))
         self.close()
 
@@ -258,7 +255,7 @@ class CallbackEvent(plexapp.util.CompatEvent):
                 return True
 
             if timeout:
-                plexnet_util.Event.wait(self, timeout)
+                threading._Event.wait(self, timeout)
         finally:
             return self.isSet()
 
@@ -270,7 +267,7 @@ class CallbackEvent(plexapp.util.CompatEvent):
 def init():
     util.DEBUG_LOG('Initializing...')
 
-    with CallbackEvent(plexapp.util.APP, 'init'):
+    with CallbackEvent(plexapp.APP, 'init'):
         plexapp.init()
         util.DEBUG_LOG('Waiting for account initialization...')
 
@@ -285,7 +282,7 @@ def init():
                 util.DEBUG_LOG('FAILED TO AUTHORIZE')
                 return False
 
-            with CallbackEvent(plexapp.util.APP, 'account:response'):
+            with CallbackEvent(plexapp.APP, 'account:response'):
                 plexapp.ACCOUNT.validateToken(token)
                 util.DEBUG_LOG('Waiting for account initialization...')
 
@@ -323,7 +320,7 @@ def requirePlexPass():
 
 
 def authorize():
-    from .windows import signin, background
+    from windows import signin, background
 
     background.setSplash(False)
 

@@ -1,28 +1,27 @@
-from __future__ import absolute_import
 from xml.etree import ElementTree
-import six.moves.urllib.request, six.moves.urllib.parse, six.moves.urllib.error
+import urllib
 
-from . import plexapp
-from . import plexconnection
-from . import plexserver
-from . import myplexrequest
-from . import callback
-from . import util
+import plexapp
+import plexconnection
+import plexserver
+import myplexrequest
+import callback
+import util
 
 
 class MyPlexManager(object):
     def publish(self):
         util.LOG('MyPlexManager().publish() - NOT IMPLEMENTED')
         return  # TODO: ----------------------------------------------------------------------------------------------------------------------------- IMPLEMENT?
-        request = myplexrequest.MyPlexRequest("/devices/" + util.INTERFACE.getGlobal("clientIdentifier"))
+        request = myplexrequest.MyPlexRequest("/devices/" + plexapp.INTERFACE.getGlobal("clientIdentifier"))
         context = request.createRequestContext("publish")
 
-        addrs = util.INTERFACE.getGlobal("roDeviceInfo").getIPAddrs()
+        addrs = plexapp.INTERFACE.getGlobal("roDeviceInfo").getIPAddrs()
 
         for iface in addrs:
-            request.addParam(six.moves.urllib.parse.quote("Connection[][uri]"), "http://{0):8324".format(addrs[iface]))
+            request.addParam(urllib.quote("Connection[][uri]"), "http://{0):8324".format(addrs[iface]))
 
-        util.APP.startRequest(request, context, "_method=PUT")
+        plexapp.APP.startRequest(request, context, "_method=PUT")
 
     def refreshResources(self, force=False):
         if force:
@@ -34,7 +33,7 @@ class MyPlexManager(object):
         if plexapp.ACCOUNT.isSecure:
             request.addParam("includeHttps", "1")
 
-        util.APP.startRequest(request, context)
+        plexapp.APP.startRequest(request, context)
 
     def onResourcesResponse(self, request, response, context):
         servers = []
@@ -43,11 +42,11 @@ class MyPlexManager(object):
 
         # Save the last successful response to cache
         if response.isSuccess() and response.event:
-            util.INTERFACE.setRegistry("mpaResources", response.event.text.encode('utf-8'), "xml_cache")
+            plexapp.INTERFACE.setRegistry("mpaResources", response.event.text.encode('utf-8'), "xml_cache")
             util.DEBUG_LOG("Saved resources response to registry")
         # Load the last successful response from cache
-        elif util.INTERFACE.getRegistry("mpaResources", None, "xml_cache"):
-            data = ElementTree.fromstring(util.INTERFACE.getRegistry("mpaResources", None, "xml_cache"))
+        elif plexapp.INTERFACE.getRegistry("mpaResources", None, "xml_cache"):
+            data = ElementTree.fromstring(plexapp.INTERFACE.getRegistry("mpaResources", None, "xml_cache"))
             response.parseFakeXMLResponse(data)
             util.DEBUG_LOG("Using cached resources")
 

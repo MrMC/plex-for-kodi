@@ -1,7 +1,5 @@
-from __future__ import absolute_import
 import socket
 import struct
-from six.moves import range
 
 class Interface:
     def __init__(self):
@@ -53,7 +51,7 @@ def _getInterfaces():
 def _getInterfacesBSD():
     #name flags family address netmask
     interfaces = []
-    from . import getifaddrs
+    import getifaddrs
     for info in getifaddrs.getifaddrs():
         if info.family == 2:
             i = Interface()
@@ -64,7 +62,7 @@ def _getInterfacesBSD():
     return interfaces
 
 def _getInterfacesWin():
-    from . import ipconfig
+    import ipconfig
     interfaces = []
     adapters = ipconfig.parse()
     for a in adapters:

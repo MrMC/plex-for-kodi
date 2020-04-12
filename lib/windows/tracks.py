@@ -1,19 +1,18 @@
-from __future__ import absolute_import
-from kodi_six import xbmc
-from kodi_six import xbmcgui
-from . import kodigui
+import xbmc
+import xbmcgui
+import kodigui
 
 from lib import colors
 from lib import util
 
 from plexnet import playlist
 
-from . import busy
-from . import musicplayer
-from . import dropdown
-from . import windowutils
-from . import opener
-from . import search
+import busy
+import musicplayer
+import dropdown
+import windowutils
+import opener
+import search
 
 from lib.util import T
 
@@ -64,9 +63,9 @@ class AlbumWindow(kodigui.ControlledWindow, windowutils.UtilMixin):
         controlID = self.getFocusId()
         try:
             if action == xbmcgui.ACTION_LAST_PAGE and xbmc.getCondVisibility('ControlGroup(300).HasFocus(0)'):
-                next(self)
+                self.next()
             elif action == xbmcgui.ACTION_NEXT_ITEM:
-                next(self)
+                self.next()
             elif action == xbmcgui.ACTION_FIRST_PAGE and xbmc.getCondVisibility('ControlGroup(300).HasFocus(0)'):
                 self.prev()
             elif action == xbmcgui.ACTION_PREV_ITEM:

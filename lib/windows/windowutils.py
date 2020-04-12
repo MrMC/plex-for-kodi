@@ -1,7 +1,6 @@
-from __future__ import absolute_import
 from lib import util
-from . import opener
-from . import dropdown
+import opener
+import dropdown
 
 from lib.util import T
 
@@ -36,7 +35,7 @@ class UtilMixin():
         self.doClose()
 
     def showAudioPlayer(self, **kwargs):
-        from . import musicplayer
+        import musicplayer
         self.processCommand(opener.handleOpen(musicplayer.MusicPlayerWindow, **kwargs))
 
     def getPlaylistResume(self, pl, items, title):

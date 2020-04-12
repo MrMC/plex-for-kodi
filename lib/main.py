@@ -1,5 +1,4 @@
-from __future__ import absolute_import
-from kodi_six import xbmc
+import xbmc
 
 if xbmc.getInfoLabel('Window(10000).Property(script.plex.running)') == "1":
     command = 'XBMC.NotifyAll({0},{1},{2})'.format('script.plex', 'RESTORE', None)
@@ -9,25 +8,18 @@ if xbmc.getInfoLabel('Window(10000).Property(script.plex.running)') == "1":
 import gc
 import atexit
 import threading
-import six
 
-from . import plex
+import plex
 
 from plexnet import plexapp
 from plexnet import threadutils
-from .windows import background, userselect, home, windowutils
-from . import player
-from . import backgroundthread
-from . import util
+from windows import background, userselect, home, windowutils
+import player
+import backgroundthread
+import util
 
 
 BACKGROUND = None
-
-
-if six.PY2:
-    _Timer = threading._Timer
-else:
-    _Timer = threading.Timer
 
 
 def waitForThreads():
@@ -37,7 +29,7 @@ def waitForThreads():
             if t != threading.currentThread():
                 if t.isAlive():
                     util.DEBUG_LOG('Main: Waiting on: {0}...'.format(t.name))
-                    if isinstance(t, _Timer):
+                    if isinstance(t, threading._Timer):
                         t.cancel()
 
                     try:
@@ -103,7 +95,7 @@ def _main():
                             util.DEBUG_LOG('Main: Waiting for selected server...')
                             try:
                                 for timeout, skip_preferred, skip_owned in ((10, True, False), (10, True, True)):
-                                    plex.CallbackEvent(plexapp.util.APP, 'change:selectedServer', timeout=timeout).wait()
+                                    plex.CallbackEvent(plexapp.APP, 'change:selectedServer', timeout=timeout).wait()
 
                                     selectedServer = plexapp.SERVERMANAGER.checkSelectedServerSearch(skip_preferred=skip_preferred, skip_owned=skip_owned)
                                     if selectedServer:
@@ -143,17 +135,17 @@ def _main():
         util.DEBUG_LOG('Main: SHUTTING DOWN...')
         background.setShutdown()
         player.shutdown()
-        plexapp.util.APP.preShutdown()
+        plexapp.APP.preShutdown()
         util.CRON.stop()
         backgroundthread.BGThreader.shutdown()
-        plexapp.util.APP.shutdown()
+        plexapp.APP.shutdown()
         waitForThreads()
         background.setBusy(False)
         background.setSplash(False)
 
         util.DEBUG_LOG('FINISHED')
 
-        from .windows import kodigui
+        from windows import kodigui
         kodigui.MONITOR = None
         util.shutdown()
 

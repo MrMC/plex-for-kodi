@@ -1,20 +1,18 @@
-from __future__ import absolute_import
 import re
 import time
 import threading
 
-from kodi_six import xbmc
-from kodi_six import xbmcgui
+import xbmc
+import xbmcgui
 
-from . import kodigui
-from . import playersettings
-from . import dropdown
+import kodigui
+import playersettings
+import dropdown
 
 from lib import util
 from lib.kodijsonrpc import builtin
 
 from lib.util import T
-from six.moves import range
 
 
 KEY_MOVE_SET = frozenset(
@@ -289,7 +287,7 @@ class SeekDialog(kodigui.BaseDialog):
             elif action.getButtonCode() == 61524:
                 builtin.Action('ShowSubtitles')
             elif action == xbmcgui.ACTION_NEXT_ITEM:
-                next(self.handler)
+                self.handler.next()
             elif action == xbmcgui.ACTION_PREV_ITEM:
                 self.handler.prev()
             elif action in (xbmcgui.ACTION_PREVIOUS_MENU, xbmcgui.ACTION_NAV_BACK, xbmcgui.ACTION_STOP):
@@ -384,7 +382,7 @@ class SeekDialog(kodigui.BaseDialog):
         elif controlID == self.PREV_BUTTON_ID:
             self.handler.prev()
         elif controlID == self.NEXT_BUTTON_ID:
-            next(self.handler)
+            self.handler.next()
         elif controlID == self.PLAYLIST_BUTTON_ID:
             self.showPlaylistDialog()
         elif controlID == self.OPTIONS_BUTTON_ID:

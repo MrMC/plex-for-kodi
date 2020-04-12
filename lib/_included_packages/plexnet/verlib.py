@@ -2,7 +2,6 @@
 "Rational" version definition and parsing for DistutilsVersionFight
 discussion at PyCon 2009.
 """
-from __future__ import absolute_import
 import re
 
 

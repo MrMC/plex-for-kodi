@@ -1,9 +1,8 @@
-from __future__ import absolute_import
-from . import plexapp
-from . import plexconnection
-from . import plexserver
-from . import plexresource
-from . import plexservermanager
+import plexapp
+import plexconnection
+import plexserver
+import plexresource
+import plexservermanager
 
 
 class MyPlexServer(plexserver.PlexServer):

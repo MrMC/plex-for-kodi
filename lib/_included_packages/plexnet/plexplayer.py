@@ -1,12 +1,10 @@
-from __future__ import absolute_import
 import re
-from . import util
-from . import captions
-from . import http
-from . import plexrequest
-from . import mediadecisionengine
-from . import serverdecision
-from six.moves import range
+import util
+import captions
+import http
+import plexrequest
+import mediadecisionengine
+import serverdecision
 
 DecisionFailure = serverdecision.DecisionFailure
 

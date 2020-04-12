@@ -1,6 +1,5 @@
-from __future__ import absolute_import
-from . import http
-from . import plexobjects
+import http
+import plexobjects
 
 
 class PlexResult(http.HttpResponse):

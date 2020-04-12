@@ -1,6 +1,5 @@
-from __future__ import absolute_import
 from plexnet import media
-from .util import T
+from util import T
 
 
 EXTRA_MAP = {

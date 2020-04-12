@@ -1,10 +1,7 @@
-from __future__ import absolute_import
-from . import mediachoice
-from . import serverdecision
-from . import plexapp
-from . import util
-import six
-from six.moves import range
+import mediachoice
+import serverdecision
+import plexapp
+import util
 
 
 class MediaDecisionEngine(object):
@@ -312,7 +309,7 @@ class MediaDecisionEngine(object):
         # return False
 
     def evaluateSubtitles(self, stream):
-        if util.INTERFACE.getPreference("burn_subtitles") == "always":
+        if plexapp.INTERFACE.getPreference("burn_subtitles") == "always":
             # If the user prefers them burned, always burn
             return mediachoice.MediaChoice.SUBTITLES_BURN
         # elif stream.codec != "srt":
@@ -443,7 +440,7 @@ class MediaDecisionEngine(object):
 
         if key is None:
             choices.sort()
-        elif isinstance(key, six.string_types):
+        elif isinstance(key, basestring):
             choices.sort(key=lambda x: getattr(x.media, key))
         elif hasattr(key, '__call__'):
             choices.sort(key=key)
@@ -463,13 +460,13 @@ class MediaDecisionEngine(object):
         return 0
 
     def isSupported4k(self, media, videoStream):
-        if videoStream is None or not util.INTERFACE.getPreference("allow_4k", True):
+        if videoStream is None or not plexapp.INTERFACE.getPreference("allow_4k", True):
             return False
 
         # # Roku 4 only: H.265/HEVC (MKV, MP4, MOV); VP9 (.MKV)
         # if media.get('container') in ("mp4", "mov", "m4v", "mkv"):
-        #     isHEVC = (videoStream.codec == "hevc" and util.INTERFACE.getPreference("allow_hevc"))
-        #     isVP9 = (videoStream.codec == "vp9" and media.get('container') == "mkv" and util.INTERFACE.getGlobal("vp9Support"))
+        #     isHEVC = (videoStream.codec == "hevc" and plexapp.INTERFACE.getPreference("allow_hevc"))
+        #     isVP9 = (videoStream.codec == "vp9" and media.get('container') == "mkv" and plexapp.INTERFACE.getGlobal("vp9Support"))
         #     return (isHEVC or isVP9)
 
         # return False

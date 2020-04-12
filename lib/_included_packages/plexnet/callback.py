@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import threading
 
 
@@ -38,7 +37,7 @@ class Callable(object):
 
     @property
     def context(self):
-        return self.func.__self__
+        return self.func.im_self
 
     @classmethod
     def nextID(cls):

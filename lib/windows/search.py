@@ -1,12 +1,11 @@
-from __future__ import absolute_import
 import time
 import threading
 
-from kodi_six import xbmcgui
+import xbmcgui
 
-from . import kodigui
-from . import opener
-from . import windowutils
+import kodigui
+import opener
+import windowutils
 
 from lib import util
 from lib.kodijsonrpc import rpc

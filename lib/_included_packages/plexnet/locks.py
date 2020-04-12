@@ -3,8 +3,7 @@
 #  * Locks().Lock("lockName")      : creates virtual lock
 #  * Locks().IsLocked("lockName")  : returns true if locked
 #  * Locks().Unlock("lockName")    : return true if existed & removed
-from __future__ import absolute_import
-from . import util
+import util
 
 
 class Locks(object):

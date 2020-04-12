@@ -1,20 +1,19 @@
-from __future__ import absolute_import
 import sys
 import os
 import re
 import traceback
 import requests
 import socket
-from . import threadutils
-import six.moves.urllib.request, six.moves.urllib.parse, six.moves.urllib.error
+import threadutils
+import urllib
 import mimetypes
-from . import plexobjects
+import plexobjects
 from xml.etree import ElementTree
 
-from . import asyncadapter
+import asyncadapter
 
-from . import callback
-from . import util
+import callback
+import util
 
 
 codes = requests.codes
@@ -72,8 +71,8 @@ class HttpRequest(object):
         #         self.session.cert = os.path.join(certsPath, 'ca-bundle.crt')
 
     def removeAsPending(self):
-        from . import plexapp
-        util.APP.delRequest(self)
+        import plexapp
+        plexapp.APP.delRequest(self)
 
     def startAsync(self, *args, **kwargs):
         self.thread = threadutils.KillableThread(target=self._startAsync, args=args, kwargs=kwargs, name='HTTP-ASYNC:{0}'.format(self.url))
@@ -106,8 +105,8 @@ class HttpRequest(object):
             if self._cancel:
                 return
         except asyncadapter.TimeoutException:
-            from . import plexapp
-            plexapp.util.APP.onRequestTimeout(context)
+            import plexapp
+            plexapp.APP.onRequestTimeout(context)
             self.removeAsPending()
             return
         except Exception as e:
@@ -219,10 +218,10 @@ class HttpRequest(object):
 
     def addParam(self, encodedName, value):
         if self.hasParams:
-            self.url += "&" + encodedName + "=" + six.moves.urllib.parse.quote_plus(value)
+            self.url += "&" + encodedName + "=" + urllib.quote_plus(value)
         else:
             self.hasParams = True
-            self.url += "?" + encodedName + "=" + six.moves.urllib.parse.quote_plus(value)
+            self.url += "?" + encodedName + "=" + urllib.quote_plus(value)
 
     def addHeader(self, name, value):
         self.session.headers[name] = value
@@ -244,14 +243,13 @@ class HttpRequest(object):
             response = HttpResponse(event)
             context.completionCallback(self, response, context)
 
-    def logRequest(self, body, timeout=None, _async=True):
+    def logRequest(self, body, timeout=None, async=True):
         # Log the real request method
         method = self.method
         if not method:
             method = body is not None and "POST" or "GET"
         util.LOG(
-            "Starting request: {0} {1} (async={2} timeout={3})".format(method, util.cleanToken(self.url),
-                                                                       _async, timeout)
+            "Starting request: {0} {1} (async={2} timeout={3})".format(method, util.cleanToken(self.url), async, timeout)
         )
 
 

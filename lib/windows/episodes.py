@@ -1,7 +1,6 @@
-from __future__ import absolute_import
-from kodi_six import xbmc
-from kodi_six import xbmcgui
-from . import kodigui
+import xbmc
+import xbmcgui
+import kodigui
 
 from lib import colors
 from lib import util
@@ -11,19 +10,18 @@ from lib import player
 
 from plexnet import plexapp, playlist, plexplayer
 
-from . import busy
-from . import videoplayer
-from . import dropdown
-from . import windowutils
-from . import opener
-from . import search
-from . import playersettings
-from . import info
-from . import optionsdialog
-from . import preplayutils
+import busy
+import videoplayer
+import dropdown
+import windowutils
+import opener
+import search
+import playersettings
+import info
+import optionsdialog
+import preplayutils
 
 from lib.util import T
-from six.moves import range
 
 
 class EpisodeReloadTask(backgroundthread.Task):
@@ -178,9 +176,9 @@ class EpisodesWindow(kodigui.ControlledWindow, windowutils.UtilMixin):
                 self.setFocusId(self.lastFocusID)
 
             if action == xbmcgui.ACTION_LAST_PAGE and xbmc.getCondVisibility('ControlGroup(300).HasFocus(0)'):
-                next(self)
+                self.next()
             elif action == xbmcgui.ACTION_NEXT_ITEM:
-                next(self)
+                self.next()
             elif action == xbmcgui.ACTION_FIRST_PAGE and xbmc.getCondVisibility('ControlGroup(300).HasFocus(0)'):
                 self.prev()
             elif action == xbmcgui.ACTION_PREV_ITEM:

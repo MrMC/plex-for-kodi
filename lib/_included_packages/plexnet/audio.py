@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import
-from . import plexobjects
-from . import plexmedia
-from . import media
+import plexobjects
+import plexmedia
+import media
 
 
 class Audio(media.MediaItem):
@@ -126,7 +125,7 @@ class Track(Audio):
     @property
     def settings(self):
         if not self._settings:
-            from . import plexapp
+            import plexapp
             self._settings = plexapp.PlayerSettingsInterface()
 
         return self._settings

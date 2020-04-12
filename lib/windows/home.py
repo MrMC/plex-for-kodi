@@ -1,12 +1,11 @@
-from __future__ import absolute_import
 import time
 import threading
 import re
 
-from kodi_six import xbmc
-from kodi_six import xbmcgui
+import xbmc
+import xbmcgui
 
-from . import kodigui
+import kodigui
 from lib import util
 from lib import backgroundthread
 from lib import colors
@@ -15,15 +14,14 @@ from lib import player
 import plexnet
 from plexnet import plexapp
 
-from . import windowutils
-from . import playlists
-from . import busy
-from . import opener
-from . import search
-from . import optionsdialog
+import windowutils
+import playlists
+import busy
+import opener
+import search
+import optionsdialog
 
 from lib.util import T
-from six.moves import range
 
 
 HUBS_REFRESH_INTERVAL = 300  # 5 Minutes
@@ -407,8 +405,8 @@ class HomeWindow(kodigui.BaseWindow, util.CronReceiver):
         plexapp.SERVERMANAGER.on('remove:server', self.onRemoveServer)
         plexapp.SERVERMANAGER.on('reachable:server', self.onReachableServer)
 
-        plexapp.util.APP.on('change:selectedServer', self.onSelectedServerChange)
-        plexapp.util.APP.on('account:response', self.displayServerAndUser)
+        plexapp.APP.on('change:selectedServer', self.onSelectedServerChange)
+        plexapp.APP.on('account:response', self.displayServerAndUser)
 
         player.PLAYER.on('session.ended', self.updateOnDeckHubs)
         util.MONITOR.on('changed.watchstatus', self.updateOnDeckHubs)
@@ -418,8 +416,8 @@ class HomeWindow(kodigui.BaseWindow, util.CronReceiver):
         plexapp.SERVERMANAGER.off('remove:server', self.onRemoveServer)
         plexapp.SERVERMANAGER.off('reachable:server', self.onReachableServer)
 
-        plexapp.util.APP.off('change:selectedServer', self.onSelectedServerChange)
-        plexapp.util.APP.off('account:response', self.displayServerAndUser)
+        plexapp.APP.off('change:selectedServer', self.onSelectedServerChange)
+        plexapp.APP.off('account:response', self.displayServerAndUser)
 
         player.PLAYER.off('session.ended', self.updateOnDeckHubs)
         util.MONITOR.off('changed.watchstatus', self.updateOnDeckHubs)
@@ -614,11 +612,7 @@ class HomeWindow(kodigui.BaseWindow, util.CronReceiver):
             return
 
         if not mli.dataSource.exists():
-            try:
-                control.removeItem(mli.pos())
-            except ValueError:
-                # fixme: why?
-                pass
+            control.removeItem(mli.pos())
 
         if not control.size():
             idx = self.hubFocusIndexes[hubControlID - 400]
@@ -1063,7 +1057,7 @@ class HomeWindow(kodigui.BaseWindow, util.CronReceiver):
             control.replaceItems(items)
 
     def updateListItem(self, mli):
-        if not mli or not mli.dataSource:  # May have become invalid
+        if not mli:  # May have become invalid
             return
 
         obj = mli.dataSource
@@ -1199,7 +1193,7 @@ class HomeWindow(kodigui.BaseWindow, util.CronReceiver):
         self.setFocusId(self.USER_BUTTON_ID)
 
         if option == 'settings':
-            from . import settings
+            import settings
             settings.openWindow()
         elif option == 'go_online':
             plexapp.ACCOUNT.refreshAccount()
@@ -1208,7 +1202,7 @@ class HomeWindow(kodigui.BaseWindow, util.CronReceiver):
             self.doClose()
 
     def showAudioPlayer(self):
-        from . import musicplayer
+        import musicplayer
         self.processCommand(opener.handleOpen(musicplayer.MusicPlayerWindow))
 
     def finished(self):

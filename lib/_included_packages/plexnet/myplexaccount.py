@@ -1,16 +1,15 @@
-from __future__ import absolute_import
 import json
 import time
 import hashlib
 from xml.etree import ElementTree
 
-from . import plexapp
-from . import myplexrequest
-from . import locks
-from . import callback
-from . import asyncadapter
+import plexapp
+import myplexrequest
+import locks
+import callback
+import asyncadapter
 
-from . import util
+import util
 
 ACCOUNT = None
 
@@ -32,7 +31,7 @@ class MyPlexAccount(object):
         self.thumb = None
 
         # Booleans
-        self.isAuthenticated = util.INTERFACE.getPreference('auto_signin', False)
+        self.isAuthenticated = plexapp.INTERFACE.getPreference('auto_signin', False)
         self.isSignedIn = False
         self.isOffline = False
         self.isExpired = False
@@ -67,15 +66,15 @@ class MyPlexAccount(object):
             'adminHasPlexPass': self.adminHasPlexPass
         }
 
-        util.INTERFACE.setRegistry("MyPlexAccount", json.dumps(obj), "myplex")
+        plexapp.INTERFACE.setRegistry("MyPlexAccount", json.dumps(obj), "myplex")
 
     def loadState(self):
         # Look for the new JSON serialization. If it's not there, look for the
         # old token and Plex Pass values.
 
-        util.APP.addInitializer("myplex")
+        plexapp.APP.addInitializer("myplex")
 
-        jstring = util.INTERFACE.getRegistry("MyPlexAccount", None, "myplex")
+        jstring = plexapp.INTERFACE.getRegistry("MyPlexAccount", None, "myplex")
 
         if jstring:
             try:
@@ -101,9 +100,9 @@ class MyPlexAccount(object):
         if self.authToken:
             request = myplexrequest.MyPlexRequest("/users/account")
             context = request.createRequestContext("account", callback.Callable(self.onAccountResponse))
-            util.APP.startRequest(request, context)
+            plexapp.APP.startRequest(request, context)
         else:
-            util.APP.clearInitializer("myplex")
+            plexapp.APP.clearInitializer("myplex")
 
     def logState(self):
         util.LOG("Authenticated as {0}:{1}".format(self.ID, repr(self.title)))
@@ -164,7 +163,7 @@ class MyPlexAccount(object):
             self.logState()
 
             self.saveState()
-            util.MANAGER.publish()
+            plexapp.MANAGER.publish()
             plexapp.refreshResources()
         elif response.getStatus() >= 400 and response.getStatus() < 500:
             # The user is specifically unauthorized, clear everything
@@ -179,14 +178,14 @@ class MyPlexAccount(object):
             if not self.isAuthenticated and not self.isProtected:
                 self.isAuthenticated = True
 
-        util.APP.clearInitializer("myplex")
+        plexapp.APP.clearInitializer("myplex")
         # Logger().UpdateSyslogHeader()  # TODO: ------------------------------------------------------------------------------------------------------IMPLEMENT
 
         if oldId != self.ID or self.switchUser:
             self.switchUser = None
-            util.APP.trigger("change:user", account=self, reallyChanged=oldId != self.ID)
+            plexapp.APP.trigger("change:user", account=self, reallyChanged=oldId != self.ID)
 
-        util.APP.trigger("account:response")
+        plexapp.APP.trigger("account:response")
 
     def signOut(self, expired=False):
         # Strings
@@ -207,15 +206,15 @@ class MyPlexAccount(object):
         self.isExpired = expired
 
         # Clear the saved resources
-        util.INTERFACE.clearRegistry("mpaResources", "xml_cache")
+        plexapp.INTERFACE.clearRegistry("mpaResources", "xml_cache")
 
         # Remove all saved servers
         plexapp.SERVERMANAGER.clearServers()
 
         # Enable the welcome screen again
-        util.INTERFACE.setPreference("show_welcome", True)
+        plexapp.INTERFACE.setPreference("show_welcome", True)
 
-        util.APP.trigger("change:user", account=self, reallyChanged=True)
+        plexapp.APP.trigger("change:user", account=self, reallyChanged=True)
 
         self.saveState()
 
@@ -233,7 +232,7 @@ class MyPlexAccount(object):
         context = request.createRequestContext("sign_in", callback.Callable(self.onAccountResponse))
         if self.isOffline:
             context.timeout = self.isOffline and asyncadapter.AsyncTimeout(1).setConnectTimeout(1)
-        util.APP.startRequest(request, context, {})
+        plexapp.APP.startRequest(request, context, {})
 
     def refreshAccount(self):
         if not self.authToken:

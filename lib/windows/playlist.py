@@ -1,17 +1,16 @@
-from __future__ import absolute_import
 import threading
 
-from kodi_six import xbmc
-from kodi_six import xbmcgui
-from . import kodigui
+import xbmc
+import xbmcgui
+import kodigui
 
-from . import busy
-from . import videoplayer
-from . import windowutils
-from . import dropdown
-from . import search
+import busy
+import videoplayer
+import windowutils
+import dropdown
+import search
 import plexnet
-from . import opener
+import opener
 
 from lib import colors
 from lib import util
@@ -19,7 +18,6 @@ from lib import player
 from lib import backgroundthread
 
 from lib.util import T
-from six.moves import range
 
 PLAYLIST_PAGE_SIZE = 500
 PLAYLIST_INITIAL_SIZE = 100

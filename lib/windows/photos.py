@@ -1,12 +1,11 @@
-from __future__ import absolute_import
 import threading
 import time
 import os
 
-from kodi_six import xbmcgui
+import xbmcgui
 
-from . import kodigui
-from . import busy
+import kodigui
+import busy
 
 from lib import util, colors
 from plexnet import plexapp, plexplayer, playqueue
@@ -75,7 +74,7 @@ class PhotoWindow(kodigui.BaseWindow):
                     self.prev()
             elif action == xbmcgui.ACTION_MOVE_RIGHT:
                 if not self.osdVisible() or self.getFocusId() == self.PQUEUE_LIST_OVERLAY_BUTTON_ID:
-                    next(self)
+                    self.next()
             elif action == xbmcgui.ACTION_MOVE_UP:
                 if self.osdVisible():
                     if self.getFocusId() == self.OVERLAY_BUTTON_ID:
@@ -98,7 +97,7 @@ class PhotoWindow(kodigui.BaseWindow):
             elif action == xbmcgui.ACTION_PREV_ITEM:
                 self.prev()
             elif action == xbmcgui.ACTION_NEXT_ITEM:
-                next(self)
+                self.next()
             elif action in (xbmcgui.ACTION_PREVIOUS_MENU, xbmcgui.ACTION_NAV_BACK):
                 if self.osdVisible():
                     self.hideOSD()
@@ -124,7 +123,7 @@ class PhotoWindow(kodigui.BaseWindow):
         if controlID == self.PREV_BUTTON_ID:
             self.prev()
         elif controlID == self.NEXT_BUTTON_ID:
-            next(self)
+            self.next()
         elif controlID == self.PLAY_PAUSE_BUTTON_ID:
             if self.isPlaying():
                 self.pause()
@@ -300,7 +299,7 @@ class PhotoWindow(kodigui.BaseWindow):
         while not util.MONITOR.waitForAbort(0.1) and self.slideshowRunning:
             if not self.slideshowNext or time.time() < self.slideshowNext:
                 continue
-            next(self)
+            self.next()
 
         util.DEBUG_LOG('Slideshow: STOPPED')
 
@@ -323,7 +322,7 @@ class PhotoWindow(kodigui.BaseWindow):
         self.showPhoto()
 
     def next(self):
-        if not next(self.playQueue):
+        if not self.playQueue.next():
             return
         self.updateProperties()
         self.showPhoto()
@@ -382,7 +381,7 @@ class PhotoWindow(kodigui.BaseWindow):
         if refreshQueue and self.playQueue:
             self.playQueue.refreshOnTimeline = True
 
-        plexapp.util.APP.nowplayingmanager.updatePlaybackState(self.timelineType, self.playerObject, state, time, self.playQueue)
+        plexapp.APP.nowplayingmanager.updatePlaybackState(self.timelineType, self.playerObject, state, time, self.playQueue)
 
     def showOSD(self):
         self.osdTimer.reset(init=False)

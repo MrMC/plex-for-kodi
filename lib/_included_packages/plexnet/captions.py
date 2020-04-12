@@ -1,11 +1,10 @@
-from __future__ import absolute_import
-from . import plexapp
-from . import util
+import plexapp
+import util
 
 
 class Captions(object):
     def __init__(self):
-        self.deviceInfo = util.INTERFACE.getGlobal("deviceInfo")
+        self.deviceInfo = plexapp.INTERFACE.getGlobal("deviceInfo")
 
         self.textSize = util.AttributeDict({
             'extrasmall': 15,

@@ -1,6 +1,5 @@
-from __future__ import absolute_import
-from . import mediachoice
-from . import util
+import mediachoice
+import util
 
 
 class DecisionFailure(Exception):

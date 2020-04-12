@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 try:
     from .signal import Signal
     from .slot import Slot

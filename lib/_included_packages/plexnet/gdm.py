@@ -1,12 +1,11 @@
-from __future__ import absolute_import
 import threading
 import socket
 import traceback
 import time
-from . import util
-from . import netif
+import util
+import netif
 
-from . import plexconnection
+import plexconnection
 
 DISCOVERY_PORT = 32414
 WIN_NL = chr(13) + chr(10)
@@ -25,15 +24,15 @@ class GDMDiscovery(object):
     #     util.LOG('GDMDiscovery().discover() - NOT IMPLEMENTED')
 
     def isActive(self):
-        from . import plexapp
-        return util.INTERFACE.getPreference("gdm_discovery", True) and self.thread and self.thread.isAlive()
+        import plexapp
+        return plexapp.INTERFACE.getPreference("gdm_discovery", True) and self.thread and self.thread.isAlive()
 
     '''
     def discover(self):
         # Only allow discovery if enabled and not currently running
         self._close = False
         import plexapp
-        if not util.INTERFACE.getPreference("gdm_discovery", True) or self.isActive():
+        if not plexapp.INTERFACE.getPreference("gdm_discovery", True) or self.isActive():
             return
 
         ifaces = netif.getInterfaces()
@@ -110,7 +109,7 @@ class GDMDiscovery(object):
             self.timer = plexapp.createTimer(5000, self.onTimer)
             self.socket = udp
             Application().AddSocketCallback(udp, createCallable("OnSocketEvent", m))
-            util.APP.addTimer(self.timer)
+            plexapp.APP.addTimer(self.timer)
         else:
             util.ERROR_LOG("Failed to send GDM discovery message")
             import plexapp
@@ -121,8 +120,8 @@ class GDMDiscovery(object):
     '''
 
     def discover(self):
-        from . import plexapp
-        if not util.INTERFACE.getPreference("gdm_discovery", True) or self.isActive():
+        import plexapp
+        if not plexapp.INTERFACE.getPreference("gdm_discovery", True) or self.isActive():
             return
 
         self.thread = threading.Thread(target=self._discover)
@@ -133,7 +132,7 @@ class GDMDiscovery(object):
         sockets = []
         self.servers = []
 
-        packet = ("M-SEARCH * HTTP/1.1" + WIN_NL + WIN_NL).encode("utf-8")
+        packet = "M-SEARCH * HTTP/1.1" + WIN_NL + WIN_NL
 
         for i in ifaces:
             if not i.broadcast:
@@ -191,7 +190,7 @@ class GDMDiscovery(object):
         if not name or not machineID:
             return
 
-        from . import plexserver
+        import plexserver
         conn = plexconnection.PlexConnection(plexconnection.PlexConnection.SOURCE_DISCOVERED, "http://" + hostname + ":" + port, True, None, bool(secureHost))
         server = plexserver.createPlexServerForConnection(conn)
         server.uuid = machineID
@@ -217,7 +216,7 @@ class GDMDiscovery(object):
 
         if self.servers:
             util.LOG("Finished GDM discovery, found {0} server(s)".format(len(self.servers)))
-            from . import plexapp
+            import plexapp
             plexapp.SERVERMANAGER.updateFromConnectionType(self.servers, plexconnection.PlexConnection.SOURCE_DISCOVERED)
             self.servers = None
 

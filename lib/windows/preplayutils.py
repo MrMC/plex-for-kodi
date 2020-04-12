@@ -1,5 +1,4 @@
-from __future__ import absolute_import
-from . import dropdown
+import dropdown
 
 from lib.util import T
 

@@ -2,14 +2,12 @@
 """
 PlexLibrary
 """
-from __future__ import absolute_import
-from . import plexobjects
-from . import playlist
-from . import media
-from . import exceptions
-from . import util
-from . import signalsmixin
-from six.moves import map
+import plexobjects
+import playlist
+import media
+import exceptions
+import util
+import signalsmixin
 
 
 class Library(plexobjects.PlexObject):
@@ -291,7 +289,7 @@ class LibrarySection(plexobjects.PlexObject):
                 continue
             matches = [k for t, k in lookup.items() if item in t]
             if matches:
-                list(map(result.add, matches))
+                map(result.add, matches)
                 continue
             # nothing matched; use raw item value
             util.LOG('Filter value not listed, using raw item value: {0}'.format(item))
@@ -378,7 +376,6 @@ class Playlist(playlist.BasePlaylist, signalsmixin.SignalsMixin):
 
     def __init__(self, *args, **kwargs):
         playlist.BasePlaylist.__init__(self, *args, **kwargs)
-        signalsmixin.SignalsMixin.__init__(self)
         self._itemsLoaded = False
 
     def __repr__(self):
@@ -429,7 +426,7 @@ class Playlist(playlist.BasePlaylist, signalsmixin.SignalsMixin):
 
     def unshuffledItems(self):
         if not self._itemsLoaded:
-            list(self.items())
+            self.items()
         return self._items
 
     @property

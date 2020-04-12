@@ -1,11 +1,10 @@
-from __future__ import absolute_import
 from xml.etree import ElementTree
 
-from . import http
-from . import exceptions
-from . import plexobjects
-from . import plexconnection
-from . import util
+import http
+import exceptions
+import plexobjects
+import plexconnection
+import util
 
 RESOURCES = 'https://plex.tv/api/resources?includeHttps=1'
 
@@ -175,7 +174,7 @@ def fetchResources(token):
     util.LOG('GET {0}?X-Plex-Token={1}'.format(RESOURCES, util.hideToken(token)))
     response = http.GET(RESOURCES)
     data = ElementTree.fromstring(response.text.encode('utf8'))
-    from . import plexserver
+    import plexserver
     return [plexserver.PlexServer(elem) for elem in data]
 
 
