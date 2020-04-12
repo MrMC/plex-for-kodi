@@ -434,7 +434,7 @@
                 <posy>0</posy>
                 <width>450</width>
                 <height>1080</height>
-                <itemgap>0</itemgap>
+                <itemgap>10</itemgap>
                 <orientation>vertical</orientation>
 
                 <control type="button">
@@ -554,7 +554,7 @@
                         <posy>5</posy>
                         <width>200</width>
                         <height>26</height>
-                        <itemgap>0</itemgap>
+                        <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
                         <align>right</align>
                         <control type="button">

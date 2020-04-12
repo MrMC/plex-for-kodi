@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.plex"
        name="Plex"
-       version="0.1.3"
-       provider-name="Plex">
+       version="1.1.6.1"
+       provider-name="Plex, MrMC">
     <requires>
         <import addon="xbmc.python" version="2.24.0"/>
         <import addon="script.module.requests" version="2.3.0"/>
@@ -15,17 +15,17 @@
     </extension>
     <extension point="xbmc.service" library="service.py" start="startup"></extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">Plex for Kodi</summary>
-        <summary lang="de">Plex für Kodi</summary>
-        <summary lang="hu">Plex for Kodi</summary>
-        <description lang="en">Official Plex for Kodi add-on</description>
-        <description lang="de">Offizielles Plex für Kodi Addon</description>
-        <description lang="hu">Hivatalos Plex for Kodi add-on</description>
-        <description lang="fr">Add-on Officiel Plex pour Kodi</description>
+        <summary lang="en">Plex for MrMC</summary>
+        <summary lang="de">Plex für MrMC</summary>
+        <summary lang="hu">Plex for MrMC</summary>
+        <description lang="en">Plex for MrMC add-on</description>
+        <description lang="de">Plex für MrMC Addon</description>
+        <description lang="hu">Plex for MrMC add-on</description>
+        <description lang="fr">Add-on Plex pour MrMC</description>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <forum>https://forums.plex.tv/categories/plex-for-kodi</forum>
-        <website>https://www.plex.tv</website>
-        <source>https://github.com/plexinc/plex-for-kodi</source>
+        <forum></forum>
+        <website></website>
+        <source>https://github.com/MrMC/plex-for-kodi/tree/mrmc-master</source>
         <platform>all</platform>
         <news>
 Kodi v18: Fix skin compatability issues

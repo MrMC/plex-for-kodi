@@ -441,9 +441,11 @@ class HomeWindow(kodigui.BaseWindow, util.CronReceiver):
                 elif self.getFocusId() == self.SERVER_LIST_ID:
                     self.setFocusId(self.SERVER_BUTTON_ID)
                     return
-
-                if not self.confirmExit():
-                    return
+                if util.getSetting('allow_exit', False):
+                    if not self.confirmExit():
+                        return
+                else:
+                    return      
         except:
             util.ERROR()
 

@@ -185,7 +185,7 @@
                     <width>1360</width>
                     <height>30</height>
                     <align>left</align>
-                    <itemgap>0</itemgap>
+                    <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <control type="label">
@@ -219,7 +219,7 @@
                     <width>1360</width>
                     <height>30</height>
                     <align>left</align>
-                    <itemgap>0</itemgap>
+                    <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <control type="label">
@@ -403,7 +403,7 @@
                 <height>1800</height>
 
                 <onup>300</onup>
-                <itemgap>0</itemgap>
+                <itemgap>10</itemgap>
 
                 <control type="group" id="500">
                     <visible>IntegerGreaterThan(Container(400).NumItems,0) + IsEmpty(Window.Property(drawing))</visible>

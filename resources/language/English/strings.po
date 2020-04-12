@@ -166,7 +166,7 @@ msgid "Server Discovery (GDM)"
 msgstr ""
 
 msgctxt "#32043"
-msgid "Start Plex On Kodi Startup"
+msgid "Start Plex On MrMC Startup"
 msgstr ""
 
 msgctxt "#32044"
@@ -214,7 +214,7 @@ msgid "Addon Version"
 msgstr ""
 
 msgctxt "#32055"
-msgid "Kodi Version"
+msgid "MrMC Version"
 msgstr ""
 
 msgctxt "#32056"
@@ -225,6 +225,9 @@ msgctxt "#32057"
 msgid "Current Server Version"
 msgstr ""
 
+msgctxt "#32058"
+msgid "Allow Plex addon to exit to MrMC"
+msgstr ""
 
 msgctxt "#32100"
 msgid "Skip user selection and pin entry on startup."
@@ -688,11 +691,11 @@ msgid "Quality"
 msgstr ""
 
 msgctxt "#32398"
-msgid "Kodi Video Settings"
+msgid "MrMC Video Settings"
 msgstr ""
 
 msgctxt "#32399"
-msgid "Kodi Audio Settings"
+msgid "MrMC Audio Settings"
 msgstr ""
 
 msgctxt "#32400"
